@@ -1,0 +1,1 @@
+Start date 5/22/2020. Start with pure javascript and only runs in the console.log.
