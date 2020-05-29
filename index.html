@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rock Paper Scissors</title>
+  <title>Rock Paper Scissors Lizard Spock</title>
   <meta charset="UTF-8"/>
 </head>
 <body>
-    <script src="script.js"></script>
+  <main>
+    <h1>Rock Paper Scissors Lizard Spock</h1>
+    <div id="scoreCard">
+      <p id="playerScore">0</p>
+      <p id="computerScore">0</p>
+      <p id="playerScore">0</p>
+      <p id="player">Player</p>
+      <p id="computer">Computer</p>
+    </div>
+    <div id="gameBoard">
+      <div id="selections">
+        <h2>"Rock, paper, scissors, lizard, or Spock?"</h2>
+        <button type="button" id="selectRock">Rock</button>
+        <button type="button" id="selectPaper">Paper</button>
+        <button type="button" id="selectScissors">Scissors</button>
+        <button type="button" id="selectLizard">Lizard</button>
+        <button type="button" id="selectSpock">Spock</button>
+      </div>
+      <div id="gamePlay">
+        <h2>"Rock, paper, scissors, lizard, or Spock?"</h2>
+        <p id=playerChoice></p>
+        <p id=computerChoice></p>
+        <p id=roundResults></p>
+        <button type="button" id="reset">Reset</button>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
