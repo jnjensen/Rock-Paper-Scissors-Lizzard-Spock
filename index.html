@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Rock Paper Scissors Lizard Spock</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Quantico:wght@700&family=Roboto&display=swap" rel="stylesheet">
   <meta charset="UTF-8"/>
 </head>
@@ -17,14 +18,15 @@
     <div id="gameBoard">
       <div id="selections">
         <h2>"Rock, paper, scissors, lizard, or Spock?"</h2>
-        <button type="button" id="selectRock">Rock</button>
-        <button type="button" id="selectPaper">Paper</button>
-        <button type="button" id="selectScissors">Scissors</button>
-        <button type="button" id="selectLizard">Lizard</button>
-        <button type="button" id="selectSpock">Spock</button>
+        <div id="selectButtons">
+          <button type="button" id="selectRock">Rock</button>
+          <button type="button" id="selectPaper">Paper</button>
+          <button type="button" id="selectScissors">Scissors</button>
+          <button type="button" id="selectLizard">Lizard</button>
+          <button type="button" id="selectSpock">Spock</button>
+        </div>
       </div>
       <div id="gamePlay">
-        <h2>"Rock, paper, scissors, lizard, or Spock?"</h2>
         <p id=playerChoice></p>
         <p id=computerChoice></p>
         <p id=roundResults></p>

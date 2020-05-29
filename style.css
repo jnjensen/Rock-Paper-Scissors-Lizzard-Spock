@@ -1,0 +1,81 @@
+body{
+    background-color:#455A64;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1{
+    color: white;
+    font-family: 'Quantico', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  
+  #scoreCard{
+    background-color: #2E7D32;
+    border: 10px solid white;
+    border-radius: 20px;
+    padding: 0px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 500px;
+    font-size: 42px;
+    justify-items: center;
+    color: white;
+  }
+  
+  #playerScore, #computerScore{
+    font-size: 150px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+  
+  #player, #computer{
+    padding: 0px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  
+  h2{
+    font-family: 'Quantico', sans-serif;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  #selectButtons{
+    width: 745px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  button{
+    background-color: white;
+    border-style: none;
+    border-radius: 50px
+  }
+  
+  button:hover{
+    color: white;
+    background-color: #2E7D32;
+  }
+  
+  #selections button{
+    width: 125px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px 10px 5px 10px;
+  }
+  
+  #reset{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-radius: 0px;
+    font-size: 20px;
+    padding: 5px 20px 5px 20px;
+  }
