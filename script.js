@@ -1,102 +1,138 @@
+const cChoice = document.querySelector('#computerChoice');
+const pChoice = document.querySelector('#playerChoice');
+const rWin = document.querySelector('#roundResults');
+const pScore = document.querySelector('#playerScore');
+const cScore = document.querySelector('#computerScore');
+const rock = document.querySelector("#selectRock");
+const paper = document.querySelector("#selectPaper");
+const scissors = document.querySelector("#selectScissors");
+const lizard = document.querySelector("#selectLizard");
+const spock = document.querySelector("#selectSpock");
+const resetButton = document.querySelector("#reset");
+
+var compPoint = 0;
+var playPoint = 0;
+var count = 0;
+
 function name_to_number(name){
-    if (name == "rock"){
-        return 0}
-    else if (name == "spock"){
-        return 1}
-    else if (name == "paper"){
-        return 2}
-    else if (name == "lizard"){
-        return 3}
-    else if (name == "scissors"){
-        return 4}
+    if (name == "Rock"){
+        return 0;}
+    else if (name == "Spock"){
+        return 1;}
+    else if (name == "Paper"){
+        return 2;}
+    else if (name == "Lizard"){
+        return 3;}
+    else if (name == "Scissors"){
+        return 4;}
     else{
-        return "Error: invalid choice"}
+        return "Error: invalid choice";}
 }
-
-
 
 function number_to_name(number){
     if (number == 0){
-        return "rock"}
+        return "Rock";}
     else if (number == 1){
-        return "Spock"}
+        return "Spock";}
     else if (number == 2){
-        return "paper"}
+        return "Paper";}
     else if (number == 3){
-        return "lizard"}
+        return "Lizard";}
     else if (number == 4){
-        return "scissors"}
+        return "Scissors";}
     else{
-        return "Error: invalid numerical value"}
+        return "Rock";
+    }
 }
 
 function computerChoice() {
     var x = Math.floor((Math.random() * 6));
-    return x;
-}
-
-function playerChoice() {
-    var y = prompt("Rock, paper, scissors, lizard, or Spock?");
-    y = y.toLowerCase();
-    return name_to_number(y);
+    return (number_to_name(x));
 }
 
 function winner(player, comp){
     var play = (player-comp)
     if (play == 0){
-        console.log("Player and Computer tie this round!");
         return "player and comp";
     } else if (play <0){
         var x = play + 5
         if (x == 1||x == 2){
-            console.log("Player wins this round!");
             return "player";
         } else {
-            console.log("Computer wins this round!");
             return "comp";
         }
     } else if (play == 1||play == 2){
-        console.log("Player wins this round!");
         return "player";
     } else {
-        console.log("Computer wins this round!");
         return "comp";
     }
 }
 
-function rpsls(player_choice){ 
-    console.log(" ");
-    player_choice = playerChoice();
-    console.log("Player chooses " + number_to_name(player_choice));
-    comp_number = computerChoice();
-    console.log("Computer chooses " + number_to_name(comp_number));
+function rpsls(){
+    const container = document.querySelector('#gamePlay');
 
-    var point = winner(player_choice, comp_number);
+    var player_choice = this.value;
+    var player_number = name_to_number(player_choice);
+    pChoice.innerHTML = "Player chose " + player_choice;
+  
+    var comp_choice = computerChoice();
+    var comp_number = name_to_number(comp_choice);
+    cChoice.innerHTML = "Computer chose " + comp_choice;
+
+    var point = winner(player_number, comp_number);
     
     if (point == "player and comp"){
+        rWin.innerHTML = "Player and Computer tie this round!";
         count += 0;
     } else if (point == "player"){
+        rWin.innerHTML = "Player wins this round!";
         playPoint += 1;
         count += 1;
     } else {
+        rWin.innerHTML = "Computer wins this round!";
         compPoint += 1;
         count += 1;
     }
 
-    console.log("Score: Player - " + String(playPoint) + " Computer - " + String(compPoint));
+    pScore.innerHTML = playPoint;
+    cScore.innerHTML = compPoint;
 
     if (count == 5){
+        rock.style.visibility = "hidden";
+        paper.style.visibility = "hidden";
+        scissors.style.visibility = "hidden";
+        lizard.style.visibility = "hidden";
+        spock.style.visibility = "hidden";
+        cChoice.innerHTML = "";
+        rWin.innerHTML = "";
         if (playPoint > compPoint){
-            console.log("Player wins!")
+            pChoice.innerHTML = "Player wins!";
         } else {
-            console.log ("Computer Wins!")
+            pChoice.innerHTML = "Computer Wins!";
         }
-    } else {
-        rpsls()
     }
 }
 
-var count = 0;
-var playPoint = 0;
-var compPoint = 0;
-rpsls()
+function reset(){
+    rock.style.visibility = "visible";
+    paper.style.visibility = "visible";
+    scissors.style.visibility = "visible";
+    lizard.style.visibility = "visible";
+    spock.style.visibility = "visible";
+    pChoice.innerHTML = "";
+    cChoice.innerHTML = "";
+    rWin.innerHTML = "";
+    count = 0;
+    playPoint = 0;
+    compPoint = 0;
+    pScore.innerHTML = playPoint;
+    cScore.innerHTML = compPoint;
+}
+
+
+rock.addEventListener("click", rpsls);
+paper.addEventListener("click", rpsls);
+scissors.addEventListener("click", rpsls);
+lizard.addEventListener("click", rpsls);
+spock.addEventListener("click", rpsls);
+resetButton.addEventListener("click", reset);
