@@ -86,3 +86,37 @@ input:hover{
   margin: 0px;
   font-size: 20px;
 }
+
+@media (max-width: 480px){
+  #selectButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    justify-items: center;
+  }
+  
+  #selectSpock{
+    grid-area: 3/1/4/3;
+    justify-self: center;
+  }
+  
+  h1{
+    font-size: 28px;
+  }
+  
+  h2{
+    display: none;
+  }
+
+  #scoreCard{
+    border: 8px solid white;
+    margin-bottom: 10px;
+    width: 75vw;
+    font-size: 32px;
+  }
+
+  #playerScore, #computerScore{
+    font-size: 100px;
+  }
+
+}
