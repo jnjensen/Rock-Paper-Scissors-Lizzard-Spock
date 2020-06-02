@@ -92,7 +92,6 @@ input:hover{
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 75%;
-    justify-items: center;
   }
   
   #selectSpock{
@@ -113,6 +112,8 @@ input:hover{
     margin-bottom: 10px;
     width: 75vw;
     font-size: 32px;
+    padding: 0px 10px 0px 0px;
+    justify-items: center;
   }
 
   #playerScore, #computerScore{
